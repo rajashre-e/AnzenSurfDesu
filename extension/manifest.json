@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "AnzenSurf",
+  "version": "1.0",
+
+  "permissions": [
+    "identity",
+    "storage"
+  ],
+
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://www.googleapis.com/*"
+  ],
+
+  "oauth2": {
+    "client_id": "41127110896-a0u1kql25scas4n8b7kr81josj21sv9u.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly"
+    ]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  }
+}
